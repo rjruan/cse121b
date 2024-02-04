@@ -1,7 +1,7 @@
 /* Step 2 - Variables */
 let fullName = 'Ruby Ruan';
 let currentYear = '2023';
-const profilePicture = 'images/ruby copy.jpg';
+const profilePicture = 'images/9421.jpg';
 
 /* Step 3 - Element Variables */
 const nameElement = document.getElementById('name');
