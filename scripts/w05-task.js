@@ -21,9 +21,16 @@ const displayTemples = (temples) => {
 
 // Function: getTemples()
 const getTemples = async () => {
-  const response = await fetch("https://byui-cse.github.io/cse121b-ww-course/resources/temples.json");
-  templeList = await response.json();
-  displayTemples(templeList);
+  try {
+    const response = await fetch("https://byui-cse.github.io/cse121b-ww-course/resources/temples.json");
+    if (!response.ok) {
+      throw new Error('Failed to fetch temple data');
+    }
+    templeList = await response.json();
+    displayTemples(templeList);
+  } catch (error) {
+    console.error('Error fetching temple data:', error);
+  }
 }
 
 // Function: reset()
